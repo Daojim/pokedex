@@ -1,17 +1,15 @@
 from flask import Flask
-app = Flask(__name__)
-from markupsafe import escape
+import requests
 
+app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return 'Index Page'
+    return "Welcome to Jimmy's Pokedex project!"
 
-@app.route('/hello')
-def hello():
-    return '<p>Hello, World!</p>'
-
-@app.route("/<name>")
-def hello(name):
-    return f"Hello, {escape(name)}"
+@app.route("/pokemon/<pokemonName>")
+def getPokemon(name):
+    #1.
+    url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name.lower()}"
+    
