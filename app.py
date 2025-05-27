@@ -1,5 +1,8 @@
 from flask import Flask
 app = Flask(__name__)
+from markupsafe import escape
+
+
 
 @app.route('/')
 def index():
@@ -8,3 +11,7 @@ def index():
 @app.route('/hello')
 def hello():
     return '<p>Hello, World!</p>'
+
+@app.route("/<name>")
+def hello(name):
+    return f"Hello, {escape(name)}"
