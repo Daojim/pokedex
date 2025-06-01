@@ -31,6 +31,8 @@ def getPokemon(pokemonName):
     poke_type = data['types'][0]['type']['name'].title()
     height = data['height']
     weight = data['weight']
+    latestCry = data['cries']['latest']
+    legacyCry = data['cries']['legacy']
 
     #6. Return a basic HTML response
     return f"""
@@ -41,4 +43,19 @@ def getPokemon(pokemonName):
         <p>Type: {poke_type}</p>
         <p>Height: {height}</p>
         <p>Weight: {weight}</p>
+
+        <figure>
+            <figcaption>Latest audio cry:</figcaption>
+            <audio controls>
+                <source src="{latestCry}" type="audio/ogg">    
+            </audio>
+        </figure>
+
+        <figure>
+            <figcaption>Legacy audio cry:</figcaption>
+            <audio controls>
+                Legacy audio cry
+                <source src="{legacyCry}" type="audio/ogg">
+            </audio>
+        </figure>
     """
