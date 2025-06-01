@@ -26,14 +26,16 @@ def getPokemon(pokemonName):
     #5. Extract a few pieces of info
     name = data['name'].title()
     poke_id = data['id']
-    sprite = data['sprites']['front_default']
+    frontSprite = data['sprites']['front_default']
+    backSprite = data['sprites']['back_default']
     poke_type = data['types'][0]['type']['name'].title()
     height = data['height']
     weight = data['weight']
 
     #6. Return a basic HTML response
     return f"""
-        <img src="{sprite}" alt="{name} sprite">
+        <img src="{frontSprite}" alt="{name} sprite"> 
+        <img src="{backSprite}" alt="{name} sprite">
         <h1>{name}</h1>
         <p>ID: {poke_id}</p>
         <p>Type: {poke_type}</p>
