@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Welcome to Jimmy's Pokedex project! Type '/pokemon/pikachu' in the URL to see Pikachu!"
+    return render_template("index.html")
 
 @app.route("/pokemon/<pokemonName>")
 def getPokemon(pokemonName):
