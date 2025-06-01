@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Welcome to Jimmy's Pokedex project!"
+    return "Welcome to Jimmy's Pokedex project! Type '/pokemon/pikachu' in the URL to see Pikachu!"
 
 @app.route("/pokemon/<pokemonName>")
 def getPokemon(pokemonName):
@@ -28,11 +28,15 @@ def getPokemon(pokemonName):
     poke_id = data['id']
     sprite = data['sprites']['front_default']
     poke_type = data['types'][0]['type']['name'].title()
+    height = data['height']
+    weight = data['weight']
 
     #6. Return a basic HTML response
     return f"""
+        <img src="{sprite}" alt="{name} sprite">
         <h1>{name}</h1>
         <p>ID: {poke_id}</p>
         <p>Type: {poke_type}</p>
-        <img src="{sprite}" alt="{name} sprite">
+        <p>Height: {height}</p>
+        <p>Weight: {weight}</p>
     """
