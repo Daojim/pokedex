@@ -2,3 +2,8 @@
 
 I started this project the objective to learn how more about backend with using Python + Flask as well as figuring out how to use APIs with PokeAPI.
 Another skill I want to pick up is to learn solely from reading documentation.
+
+To-do:
+
+- Search bar instead of manually typing out a link
+- Instructions on how to use this if someone comes across my repo
