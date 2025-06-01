@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import requests
 
 app = Flask(__name__)
@@ -34,28 +34,15 @@ def getPokemon(pokemonName):
     latestCry = data['cries']['latest']
     legacyCry = data['cries']['legacy']
 
-    #6. Return a basic HTML response
-    return f"""
-        <img src="{frontSprite}" alt="{name} sprite"> 
-        <img src="{backSprite}" alt="{name} sprite">
-        <h1>{name}</h1>
-        <p>ID: {poke_id}</p>
-        <p>Type: {poke_type}</p>
-        <p>Height: {height}</p>
-        <p>Weight: {weight}</p>
-
-        <figure>
-            <figcaption>Latest audio cry:</figcaption>
-            <audio controls>
-                <source src="{latestCry}" type="audio/ogg">    
-            </audio>
-        </figure>
-
-        <figure>
-            <figcaption>Legacy audio cry:</figcaption>
-            <audio controls>
-                Legacy audio cry
-                <source src="{legacyCry}" type="audio/ogg">
-            </audio>
-        </figure>
-    """
+    return render_template(
+        "pokemon.html",
+        name=name,
+        poke_id=poke_id,
+        frontSprite=frontSprite,
+        backSprite=backSprite,
+        poke_type=poke_type,
+        height=height,
+        weight=weight,
+        latestCry=latestCry,
+        legacyCry=legacyCry
+    )
