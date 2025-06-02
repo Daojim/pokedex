@@ -50,8 +50,8 @@ def getPokemon(pokemonName):
     #If description is found, loop through the data and grab the first English one
     if species_response.status_code == 200:
         species_data = species_response.json()
-        for entry in species_data["flavour_text_entries"]:
-            if entry["langauge"]["name"] == "en":
+        for entry in species_data["flavor_text_entries"]:
+            if entry["language"]["name"] == "en":
                 #Entries have \n and \f characters that will be replaced with spaces.
                 description = entry["flavor_text"].replace("\n", " ").replace("\f", " ")
                 break
