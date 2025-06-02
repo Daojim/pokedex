@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import requests
 
 app = Flask(__name__)
@@ -7,6 +7,15 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
+
+@app.route('/pokemon')
+def redirect_to_pokemon():
+    # Read ?name=pikachu from URL
+    name = request.args.get('name')  
+    if name:
+        return redirect(url_for('getPokemon', pokemonName=name))
+    return redirect(url_for('index'))
+
 
 @app.route("/pokemon/<pokemonName>")
 def getPokemon(pokemonName):
