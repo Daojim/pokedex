@@ -1,9 +1,6 @@
-# Pokedex with Python + Flask
+# Pokedex Web App
 
-I started this project the objective to learn how more about backend with using Python + Flask as well as figuring out how to use APIs with PokeAPI.
-Another skill I want to pick up is to learn solely from reading documentation.
+## Flask • HTML/CSS • Jinja2 • Render Deployment
 
-To-do:
-
-- Search bar instead of manually typing out a link
-- Instructions on how to use this if someone comes across my repo
+This project demonstrates full-stack functionality with Python’s Flask framework, calling the PokéAPI for dynamic content and rendering results with Jinja2 templates.
+Built to reinforce backend development concepts and deployed using Render.
