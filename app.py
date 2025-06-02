@@ -43,8 +43,21 @@ def getPokemon(pokemonName):
     poke_type = data['types'][0]['type']['name'].title()
     height = data['height']
     weight = data['weight']
+
+    #Initially have no description found
+    description = "No description found."
+
+    #If description is found, loop through the data and grab the first English one
+    if species_response.status_code == 200:
+        species_data = species_response.json()
+        for entry in species_data["flavour_text_entries"]:
+            if entry["langauge"]["name"] == "en":
+                #Entries have \n and \f characters that will be replaced with spaces.
+                description = entry["flavor_text"].replace("\n", " ").replace("\f", " ")
+                break
     latestCry = data['cries']['latest']
     legacyCry = data['cries']['legacy']
+    
 
     return render_template(
         "pokemon.html",
@@ -55,6 +68,7 @@ def getPokemon(pokemonName):
         poke_type=poke_type,
         height=height,
         weight=weight,
+        description=description,
         latestCry=latestCry,
         legacyCry=legacyCry
     )
