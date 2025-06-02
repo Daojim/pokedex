@@ -1,0 +1,85 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Layout */
+body {
+  background-color: #f0f4f8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+/* Form Input Field */
+input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 60%;
+  margin-top: 10px;
+}
+
+/* Submit Button */
+button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  background-color: #d62828;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+button:hover {
+  background-color: #a91e1e;
+}
+
+/* Card Container */
+.pokedex-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #d62828;
+}
+
+/* Images */
+.pokemon-images img {
+  width: 120px;
+  margin: 10px;
+}
+
+/* Data Lines */
+p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+/* Description */
+.description {
+  font-style: italic;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* Audio Controls */
+audio {
+  margin-top: 10px;
+  width: 90%;
+}

@@ -2,30 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ name }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
   </head>
   <body>
-    <img src="{{frontSprite}}" alt="{{name}} sprite" />
-    <img src="{{backSprite}}" alt="{{name}} sprite" />
-    <h1>{{name}}</h1>
-    <p>ID: {{poke_id}}</p>
-    <p>Type: {{poke_type}}</p>
-    <p>Height: {{height}}</p>
-    <p>Weight: {{weight}}</p>
-    <p>Description: {{description}}</p>
-    <figure>
-      <figcaption>Latest audio cry:</figcaption>
-      <audio controls>
-        <source src="{{latestCry}}" type="audio/ogg" />
-      </audio>
-    </figure>
+    <div class="pokedex-card">
+      <h1>{{ name }}</h1>
 
-    <figure>
-      <figcaption>Legacy audio cry:</figcaption>
-      <audio controls>
-        <source src="{{legacyCry}}" type="audio/ogg" />
-      </audio>
-    </figure>
+      <div class="pokemon-images">
+        <img src="{{ frontSprite }}" alt="{{ name }} front sprite" />
+        <img src="{{ backSprite }}" alt="{{ name }} back sprite" />
+      </div>
+
+      <p><strong>ID:</strong> {{ poke_id }}</p>
+      <p><strong>Type:</strong> {{ poke_type }}</p>
+      <p><strong>Height:</strong> {{ height }}</p>
+      <p><strong>Weight:</strong> {{ weight }}</p>
+
+      <p class="description">{{ description }}</p>
+
+      <figure>
+        <figcaption>Latest Cry:</figcaption>
+        <audio controls>
+          <source src="{{ latestCry }}" type="audio/ogg" />
+        </audio>
+      </figure>
+
+      <figure>
+        <figcaption>Legacy Cry:</figcaption>
+        <audio controls>
+          <source src="{{ legacyCry }}" type="audio/ogg" />
+        </audio>
+      </figure>
+    </div>
   </body>
 </html>
