@@ -21,9 +21,11 @@ def redirect_to_pokemon():
 def getPokemon(pokemonName):
     #1. Let user manually type url for now.
     url = f"https://pokeapi.co/api/v2/pokemon/{pokemonName.lower()}"
+    species_url = f"https://pokeapi.co/api/v2/pokemon-species/{pokemonName.lower()}"
 
     #2. Send GET request to the PokeAPI
     response = requests.get(url)
+    species_response = requests.get(species_url)
 
     #3. Handle the case where the Pokemon doesn't exist
     if response.status_code != 200:
@@ -31,6 +33,7 @@ def getPokemon(pokemonName):
     
     #4. Parse the JSON data
     data = response.json()
+    species_data = species_response.json()
 
     #5. Extract a few pieces of info
     name = data['name'].title()
