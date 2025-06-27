@@ -27,7 +27,7 @@
       <p>
         <strong>Type:</strong>
         {% for t in types %}
-        <span class="type-badge">{{ t }}</span>
+        <span class="type-badge type-{{ t | lower}}">{{ t }}</span>
         {% endfor %}
       </p>
       <p><strong>Height:</strong> {{ height }}</p>
