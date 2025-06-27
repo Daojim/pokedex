@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-import requests
+import requests, random
 
 app = Flask(__name__)
 
@@ -72,3 +72,8 @@ def getPokemon(pokemonName):
         latestCry=latestCry,
         legacyCry=legacyCry
     )
+
+@app.route('/random')
+def random_pokemon():
+    random_id = random.randint(1,1010)
+    return redirect(url_for('getPokemon', pokemonName=random_id))
