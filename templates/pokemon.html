@@ -35,7 +35,86 @@
 
       <p class="description">{{ description }}</p>
 
-      <figure>
+      <!-- Latest Cry Section -->
+      <h3>Latest Cry:</h3>
+      <!-- Play button -->
+      <button type="button" id="playLatest" class="cry-button">
+        🔊 Play Cry
+      </button>
+      <!-- Volume slider starting at 10% -->
+      <input
+        id="latestCryVolume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.05"
+      />
+      <!-- Audio element without default controls -->
+      <audio id="latestCry">
+        <source src="{{ latestCry }}" type="audio/ogg" />
+      </audio>
+
+      <br />
+
+      <!-- Legacy Cry Section -->
+      <h3>Legacy Cry:</h3>
+      <!-- Play button -->
+      <button type="button" id="playLegacy" class="cry-button">
+        🔊 Play Cry
+      </button>
+      <!-- Volume slider starting at 5% -->
+      <input
+        id="legacyCryVolume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.05"
+      />
+      <!-- Audio element without default controls -->
+      <audio id="legacyCry">
+        <source src="{{ legacyCry }}" type="audio/ogg" />
+      </audio>
+
+      <!-- SCRIPT BLOCK: Adds all the behavior for play and volume -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          // Get elements for latest cry
+          const latestAudio = document.querySelector("#latestCry");
+          const latestSlider = document.querySelector("#latestCryVolume");
+          const latestPlayButton = document.querySelector("#playLatest");
+
+          // Set default volume to 5%
+          latestAudio.volume = 0.05;
+
+          // Play button handler
+          latestPlayButton.addEventListener("click", () => latestAudio.play());
+
+          // Volume slider handler
+          latestSlider.addEventListener("input", (e) => {
+            latestAudio.volume = e.target.value;
+          });
+
+          // --- Repeat for legacy cry ---
+          const legacyAudio = document.querySelector("#legacyCry");
+          const legacySlider = document.querySelector("#legacyCryVolume");
+          const legacyPlayButton = document.querySelector("#playLegacy");
+
+          // Default volume
+          legacyAudio.volume = 0.05;
+
+          // Play button
+          legacyPlayButton.addEventListener("click", () => legacyAudio.play());
+
+          // Volume slider
+          legacySlider.addEventListener("input", (e) => {
+            legacyAudio.volume = e.target.value;
+          });
+        });
+      </script>
+
+      <!-- <figure>
         <figcaption>Latest Cry:</figcaption>
         <audio controls>
           <source src="{{ latestCry }}" type="audio/ogg" />
@@ -47,7 +126,7 @@
         <audio controls>
           <source src="{{ legacyCry }}" type="audio/ogg" />
         </audio>
-      </figure>
+      </figure> -->
 
       <div class="nav-buttons">
         <form
