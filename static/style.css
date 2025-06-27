@@ -90,12 +90,12 @@ audio {
 
 .type-badge {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 4px 10px;
   margin: 2px;
-  background-color: #eee;
   border-radius: 8px;
   font-size: 0.9rem;
-  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Type Colors */
@@ -116,12 +116,12 @@ audio {
 
 .type-electric {
   background-color: #f7d02c;
-  color: black;
+  color: white;
 }
 
 .type-ice {
   background-color: #96d9d6;
-  color: black;
+  color: white;
 }
 
 .type-fighting {
@@ -136,12 +136,12 @@ audio {
 
 .type-ground {
   background-color: #e2bf65;
-  color: black;
+  color: white;
 }
 
 .type-flying {
   background-color: #a98ff3;
-  color: black;
+  color: white;
 }
 
 .type-psychic {
@@ -151,12 +151,12 @@ audio {
 
 .type-bug {
   background-color: #a6b91a;
-  color: black;
+  color: white;
 }
 
 .type-rock {
   background-color: #b6a136;
-  color: black;
+  color: white;
 }
 
 .type-ghost {
@@ -176,15 +176,15 @@ audio {
 
 .type-steel {
   background-color: #b7b7ce;
-  color: black;
+  color: white;
 }
 
 .type-fairy {
   background-color: #d685ad;
-  color: black;
+  color: white;
 }
 
 .type-normal {
   background-color: #a8a77a;
-  color: black;
+  color: white;
 }
