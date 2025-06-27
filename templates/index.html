@@ -18,6 +18,10 @@
         <input type="text" name="name" placeholder="e.g. Pikachu" required />
         <button type="submit">Search</button>
       </form>
+      <br />
+      <form action="{{ url_for('random_pokemon') }}">
+        <button type="submit">🎲 Random Pokémon</button>
+      </form>
     </div>
   </body>
 </html>

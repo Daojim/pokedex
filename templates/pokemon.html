@@ -38,5 +38,14 @@
         </audio>
       </figure>
     </div>
+
+    <form action="{{ url_for('redirect_to_pokemon') }}" method="get">
+      <input type="text" name="name" placeholder="e.g. Bulbasaur" required />
+      <button type="submit">Search</button>
+    </form>
+    <br />
+    <form action="{{ url_for('random_pokemon') }}" method="get">
+      <button type="submit">🎲 Random Pokémon</button>
+    </form>
   </body>
 </html>
