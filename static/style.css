@@ -88,6 +88,17 @@ audio {
   text-align: left;
 }
 
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.nav-buttons button {
+  margin: 0;
+}
+
 .type-badge {
   display: inline-block;
   padding: 4px 10px;

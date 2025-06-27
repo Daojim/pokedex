@@ -48,6 +48,22 @@
           <source src="{{ legacyCry }}" type="audio/ogg" />
         </audio>
       </figure>
+
+      <div class="nav-buttons">
+        <form
+          action="{{ url_for('getPokemon', pokemonName=prev_id) }}"
+          method="get"
+        >
+          <button type="submit">← Previous</button>
+        </form>
+        <form
+          action="{{ url_for('getPokemon', pokemonName=next_id) }}"
+          method="get"
+        >
+          <button type="submit">Next →</button>
+        </form>
+      </div>
+
       <form action="{{ url_for('redirect_to_pokemon') }}" method="get">
         <input type="text" name="name" placeholder="e.g. Bulbasaur" required />
         <button type="submit">Search</button>

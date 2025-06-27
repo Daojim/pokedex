@@ -19,6 +19,8 @@ def redirect_to_pokemon():
 
 @app.route("/pokemon/<pokemonName>")
 def getPokemon(pokemonName):
+
+
     #1. Let user manually type url for now.
     url = f"https://pokeapi.co/api/v2/pokemon/{pokemonName.lower()}"
     species_url = f"https://pokeapi.co/api/v2/pokemon-species/{pokemonName.lower()}"
@@ -58,6 +60,10 @@ def getPokemon(pokemonName):
     latestCry = data['cries']['latest']
     legacyCry = data['cries']['legacy']
     
+    # For previous and next buttons. Ensures I never go below 1 or above 1010
+    prev_id = max(1, poke_id - 1)
+    next_id = min(1010, poke_id + 1)
+
 
     return render_template(
         "pokemon.html",
@@ -70,7 +76,9 @@ def getPokemon(pokemonName):
         weight=weight,
         description=description,
         latestCry=latestCry,
-        legacyCry=legacyCry
+        legacyCry=legacyCry,
+        prev_id=prev_id,
+        next_id=next_id
     )
 
 @app.route('/random')
