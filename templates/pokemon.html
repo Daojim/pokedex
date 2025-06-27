@@ -10,6 +10,12 @@
   </head>
   <body>
     <div class="pokedex-card">
+      <div class="home-button">
+        <form action="{{ url_for('index') }}" method="get">
+          <button type="submit">← Home</button>
+        </form>
+      </div>
+
       <h1>{{ name }}</h1>
 
       <div class="pokemon-images">
