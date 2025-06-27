@@ -40,7 +40,7 @@ def getPokemon(pokemonName):
     poke_id = data['id']
     frontSprite = data['sprites']['front_default']
     backSprite = data['sprites']['back_default']
-    poke_type = data['types'][0]['type']['name'].title()
+    types = [t['type']['name'].title() for t in data['types']]
     height = data['height']
     weight = data['weight']
 
@@ -65,7 +65,7 @@ def getPokemon(pokemonName):
         poke_id=poke_id,
         frontSprite=frontSprite,
         backSprite=backSprite,
-        poke_type=poke_type,
+        types=types,
         height=height,
         weight=weight,
         description=description,

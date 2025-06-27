@@ -24,7 +24,12 @@
       </div>
 
       <p><strong>ID:</strong> {{ poke_id }}</p>
-      <p><strong>Type:</strong> {{ poke_type }}</p>
+      <p>
+        <strong>Type:</strong>
+        {% for t in types %}
+        <span class="type-badge">{{ t }}</span>
+        {% endfor %}
+      </p>
       <p><strong>Height:</strong> {{ height }}</p>
       <p><strong>Weight:</strong> {{ weight }}</p>
 
